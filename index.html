@@ -8,6 +8,52 @@
     <meta name="author" content="SundorZon Team">
     <title>SundorZon - Your Online Store</title>
     <link rel="stylesheet" href="styles.css">
+
+
+
+
+
+
+<!-- Firebase App (the core Firebase SDK) -->
+<script type="module">
+    // Import the functions you need from the SDKs you need (Firebase v9 Modular)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+  
+    // Your Firebase configuration (replace with your own config values)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  
+    // Expose auth and helper functions to window for use in your other scripts
+    window.firebaseAuth = auth;
+    window.firebaseAuthHelpers = { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged };
+  </script>
+  
+
+
+
+
+
+
+
+
+
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -24,7 +70,7 @@
                 <button aria-label="Search"><i class="fas fa-search"></i></button>
             </div>
             <div class="nav-links">
-                <button class="login-btn" onclick="openModal()">Login</button>
+                <a href="login.html" class="login-btn">Login</a>
                 <a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart</a>
             </div>
         </nav>
@@ -43,47 +89,54 @@
     <section class="featured">
         <h2>Featured Products</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <img src="product1.jpg" alt="Product 1">
+            <div class="product-card" data-id="1" data-name="Wireless Headphones" data-price="99.99" data-img="product1.jpg">
+                <img src="product1.jpg" alt="Wireless Headphones">
                 <h3>Wireless Headphones</h3>
                 <p>$99.99</p>
-                <button class="btn">Add to Cart</button>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
-            <div class="product-card">
-                <img src="product2.jpg" alt="Product 2">
+            <div class="product-card" data-id="2" data-name="Smart Watch" data-price="149.99" data-img="product2.jpg">
+                <img src="product2.jpg" alt="Smart Watch">
                 <h3>Smart Watch</h3>
                 <p>$149.99</p>
-                <button class="btn">Add to Cart</button>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
-            <div class="product-card">
-                <img src="product3.jpg" alt="Product 3">
+            <div class="product-card" data-id="3" data-name="Gaming Mouse" data-price="49.99" data-img="product3.jpg">
+                <img src="product3.jpg" alt="Gaming Mouse">
                 <h3>Gaming Mouse</h3>
                 <p>$49.99</p>
-                <button class="btn">Add to Cart</button>
+                <button class="btn add-to-cart">Add to Cart</button>
             </div>
         </div>
     </section>
 
+    <!-- Admin Interface -->
+    <section id="admin-section" class="admin-section">
+        <h2>Product Management</h2>
+        <form id="admin-form" class="admin-form">
+            <input type="hidden" name="id">
+            <input type="text" name="name" placeholder="Product Name" required>
+            <input type="number" name="price" placeholder="Price" step="0.01" required>
+            <button type="submit" class="btn">Save Product</button>
+        </form>
+        <div id="admin-product-list" class="admin-product-list"></div>
+    </section>
     <!-- ✅ Categories Section -->
     <section class="categories">
         <h2>Shop by Category</h2>
         <div class="category-grid">
-            <div class="category-card">
+            <a href="categories.html" class="category-card" data-category="electronics">
                 <i class="fas fa-laptop"></i>
                 <p>Electronics</p>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="categories.html" class="category-card" data-category="fashion">
                 <i class="fas fa-tshirt"></i>
                 <p>Fashion</p>
-            </div>
-            <div class="category-card">
-                <i class="fas fa-couch"></i>
-                <p>Home & Furniture</p>
-            </div>
-            <div class="category-card">
+            </a>
+            <a href="categories.html" class="category-card" data-category="books">
                 <i class="fas fa-book"></i>
                 <p>Books</p>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -100,23 +153,14 @@
         </div>
     </footer>
 
-    <!-- ✅ Login/Signup Modal -->
-    <div id="auth-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Login to SundorZon</h2>
-            <form>
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
+    
 
-                <button type="submit" class="btn">Login</button>
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
-            </form>
-        </div>
-    </div>
 
+
+<!-- Logout Button -->
+  <button id="logout-button">Logout</button>
+  
+
+  
 </body>
 </html>
