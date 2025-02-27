@@ -1,0 +1,121 @@
+/*--------------------------------------------------------------
+# SundorZon Color Palette & Global Styles
+--------------------------------------------------------------*/
+:root {
+    /* Color Palette */
+    --primary-color: #333333;    /* Primary text and navbar background */
+    --secondary-color: #ffffff;  /* Main background and text color */
+    --accent-color: #f0a500;     /* Accent for hover effects, prices, etc. */
+    --background-color: #f9f9f9;  /* Overall page background */
+    --card-background: #ffffff;  /* Product card background */
+    --card-border: #dddddd;      /* Border color for product cards */
+    --font-family: 'Arial', sans-serif;
+  }
+  
+  /* Global Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--accent-color);
+  }
+  
+  /*--------------------------------------------------------------
+  # Product Grid Layout
+  --------------------------------------------------------------*/
+  
+  /* Container for the product grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Styling individual product cards */
+  .product-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Product Image */
+  .product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Container for product details */
+  .product-card .product-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Product Title */
+  .product-card .product-title {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+  
+  /* Product Description */
+  .product-card .product-description {
+    font-size: 0.9em;
+    margin: 0 0 15px;
+    color: #555;
+    flex-grow: 1;
+  }
+  
+  /* Product Price */
+  .product-card .product-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+  
+  /*--------------------------------------------------------------
+  # Responsive Media Queries
+  --------------------------------------------------------------*/
+  
+  /* For devices with a width up to 768px */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+  }
+  
+  /* For devices between 769px and 1024px */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding: 15px;
+    }
+  }
+  

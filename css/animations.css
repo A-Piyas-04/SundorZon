@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+# On-Scroll Animation Styles
+--------------------------------------------------------------*/
+
+/* Base state for fade-in elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Visible state for fade-in elements */
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Base state for slide-in elements */
+  .slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Visible state for slide-in elements */
+  .slide-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Optional: Slide-in from the right */
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  

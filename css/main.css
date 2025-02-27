@@ -1,0 +1,106 @@
+/* Parallax Banner */
+.parallax-banner {
+    background: url('../assets/images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+    position: relative;
+  }
+  
+  .banner-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner-overlay .logo {
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    background: #333;
+    color: #fff;
+    padding: 0.75em 0;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  /* Logo */
+  .nav-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  /* Navigation Menu */
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    margin-left: 20px;
+  }
+  
+  .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #f0a500; /* Accent color on hover */
+  }
+  
+  /* Mobile Menu Toggle Styles */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: #fff;
+    height: 2px;
+    width: 25px;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    top: -8px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 8px;
+  }
+  

@@ -1,0 +1,31 @@
+/* Responsive Styles for Navigation */
+@media (max-width: 768px) {
+    .nav-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #333;
+      flex-direction: column;
+      display: none;
+    }
+    
+    .nav-menu li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+    
+    .nav-toggle-label {
+      display: flex;
+    }
+    
+    /* Display Menu when Toggle is Checked */
+    .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+      display: flex;
+    }
+  }
+  

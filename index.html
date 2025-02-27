@@ -1,166 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SundorZon - Your one-stop e-commerce shop for all your needs.">
-    <meta name="keywords" content="e-commerce, shopping, online store, SundorZon, buy online">
-    <meta name="author" content="SundorZon Team">
-    <title>SundorZon - Your Online Store</title>
-    <link rel="stylesheet" href="styles.css">
-
-
-
-
-
-
-<!-- Firebase App (the core Firebase SDK) -->
-<script type="module">
-    // Import the functions you need from the SDKs you need (Firebase v9 Modular)
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import {
-      getAuth,
-      createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      signOut,
-      onAuthStateChanged
-    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
-  
-    // Your Firebase configuration (replace with your own config values)
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-  
-    // Expose auth and helper functions to window for use in your other scripts
-    window.firebaseAuth = auth;
-    window.firebaseAuthHelpers = { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged };
-  </script>
-  
-
-
-
-
-
-
-
-
-
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SundorZon | Home</title>
+  <!-- Linking CSS Files -->
+  <link rel="stylesheet" href="css/palette.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
-    
-    <!-- ✅ Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">SundorZon</a>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for products..." aria-label="Search">
-                <button aria-label="Search"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="nav-links">
-                <a href="login.html" class="login-btn">Login</a>
-                <a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart</a>
-            </div>
-        </nav>
-    </header>
+  <!-- Header Section with Parallax Banner and Responsive Navigation -->
+  <header>
+    <!-- Parallax Banner -->
+    <div class="parallax-banner">
+      <div class="banner-overlay">
+        <h1 class="logo">SundorZon</h1>
+      </div>
+    </div>
 
-    <!-- ✅ Hero Section -->
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">SundorZon</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Biggest Sale of the Year!</h1>
-            <p>Get up to 50% off on selected items. Limited time only!</p>
-            <a href="#" class="btn">Shop Now</a>
-        </div>
+      <div class="hero-content">
+        <h2>Welcome to SundorZon</h2>
+        <p>Your one-stop shop for all your favorite products!</p>
+      </div>
     </section>
 
-    <!-- ✅ Featured Products -->
-    <section class="featured">
-        <h2>Featured Products</h2>
+    <!-- Featured Products Section -->
+    <section class="features">
+      <h3>Featured Products</h3>
+      <div class="product-grid">
+        <!-- Product cards will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <section class="features">
+        <h3>Featured Products</h3>
         <div class="product-grid">
-            <div class="product-card" data-id="1" data-name="Wireless Headphones" data-price="99.99" data-img="product1.jpg">
-                <img src="product1.jpg" alt="Wireless Headphones">
-                <h3>Wireless Headphones</h3>
-                <p>$99.99</p>
-                <button class="btn add-to-cart">Add to Cart</button>
+          <!-- Example product card -->
+          <div class="product-card">
+            <img src="assets/images/sample-product.jpg" alt="Sample Product">
+            <div class="product-info">
+              <h4 class="product-title">Sample Product</h4>
+              <p class="product-description">A short description of the product.</p>
+              <p class="product-price">$29.99</p>
             </div>
-            <div class="product-card" data-id="2" data-name="Smart Watch" data-price="149.99" data-img="product2.jpg">
-                <img src="product2.jpg" alt="Smart Watch">
-                <h3>Smart Watch</h3>
-                <p>$149.99</p>
-                <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-id="3" data-name="Gaming Mouse" data-price="49.99" data-img="product3.jpg">
-                <img src="product3.jpg" alt="Gaming Mouse">
-                <h3>Gaming Mouse</h3>
-                <p>$49.99</p>
-                <button class="btn add-to-cart">Add to Cart</button>
-            </div>
+          </div>
+          <!-- Repeat .product-card for more products -->
         </div>
-    </section>
+      </section>
 
-    <!-- Admin Interface -->
-    <section id="admin-section" class="admin-section">
-        <h2>Product Management</h2>
-        <form id="admin-form" class="admin-form">
-            <input type="hidden" name="id">
-            <input type="text" name="name" placeholder="Product Name" required>
-            <input type="number" name="price" placeholder="Price" step="0.01" required>
-            <button type="submit" class="btn">Save Product</button>
-        </form>
-        <div id="admin-product-list" class="admin-product-list"></div>
-    </section>
-    <!-- ✅ Categories Section -->
-    <section class="categories">
-        <h2>Shop by Category</h2>
-        <div class="category-grid">
-            <a href="categories.html" class="category-card" data-category="electronics">
-                <i class="fas fa-laptop"></i>
-                <p>Electronics</p>
-            </a>
-            <a href="categories.html" class="category-card" data-category="fashion">
-                <i class="fas fa-tshirt"></i>
-                <p>Fashion</p>
-            </a>
-            <a href="categories.html" class="category-card" data-category="books">
-                <i class="fas fa-book"></i>
-                <p>Books</p>
-            </a>
-        </div>
-    </section>
 
-    <!-- ✅ Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 SundorZon. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
+      <!-- Example: Hero Section with Fade-In Animation -->
+<section class="hero fade-in">
+    <div class="hero-content">
+      <h2>Welcome to SundorZon</h2>
+      <p>Your one-stop shop for all your favorite products!</p>
+    </div>
+  </section>
+  
+  <!-- Example: Featured Products Section with Slide-In Animation -->
+  <section class="features slide-in">
+    <h3>Featured Products</h3>
+    <div class="product-grid">
+      <!-- Product cards will be dynamically inserted here -->
+    </div>
+  </section>
+  
+      
+
 
     
+  </main>
 
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 SundorZon. All rights reserved.</p>
+      <nav aria-label="Footer Navigation">
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 
-
-<!-- Logout Button -->
-  <button id="logout-button">Logout</button>
-  
-
-  
+  <!-- JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/crud.js"></script>
 </body>
 </html>
