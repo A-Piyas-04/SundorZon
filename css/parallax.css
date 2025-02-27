@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+# Parallax Banner Styles for SundorZon
+--------------------------------------------------------------*/
+.parallax-banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    will-change: transform;
+  }
+  
+  .banner-overlay {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner-overlay .logo {
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+  }
+  

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Management | SundorZon</title>
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Product Management</h2>
+    
+    <!-- Add Product Form -->
+    <form id="productForm">
+      <h3>Add/Edit Product</h3>
+      <input type="hidden" id="productId">
+      <div class="input-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" required>
+      </div>
+      <div class="input-group">
+        <label for="productPrice">Price ($):</label>
+        <input type="number" id="productPrice" required>
+      </div>
+      <div class="input-group">
+        <label for="productCategory">Category:</label>
+        <input type="text" id="productCategory" required>
+      </div>
+      <button type="submit">Save Product</button>
+    </form>
+
+    <!-- Product Listings Section -->
+    <h3>Product Listings</h3>
+    <div id="productGrid" class="product-grid">
+      <!-- Product cards will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+</body>
+</html>

@@ -15,11 +15,13 @@
   <!-- Header Section with Parallax Banner and Responsive Navigation -->
   <header>
     <!-- Parallax Banner -->
-    <div class="parallax-banner">
-      <div class="banner-overlay">
-        <h1 class="logo">SundorZon</h1>
+    <div id="parallax-banner" class="parallax-banner">
+        <!-- New inner div for the parallax background -->
+        <div class="parallax-bg"></div>
+        <div class="banner-overlay">
+          <h1 class="logo">SundorZon</h1>
+        </div>
       </div>
-    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -40,7 +42,10 @@
           <li><a href="products.html">Products</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="auth-link">Login</a></li>
+          <li><a href="register.html" class="auth-link">Register</a></li>
         </ul>
+        
       </div>
     </nav>
   </header>
