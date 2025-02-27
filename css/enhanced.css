@@ -1,0 +1,130 @@
+/* Enhanced Styling for SundorZon Homepage */
+
+/* Apply a soft gradient background to the whole page */
+body {
+    background: linear-gradient(120deg, #3a450f, #136133, #093e26, #fbc2eb);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Improved Parallax Banner */
+.parallax-banner {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5)), 
+                url('images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for contrast */
+}
+
+.banner-overlay .logo {
+    color: #ffcc00;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(90deg, #9a4f29, #250708);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu a {
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #a44613, #fad0c4);
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Product Section */
+.features {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+.features h3 {
+    text-align: center;
+    font-size: 2em;
+    color: #693905;
+    text-shadow: 1px 1px 5px rgba(255, 94, 98, 0.5);
+}
+
+/* Product Cards */
+.product-card {
+    background: linear-gradient(45deg, #ffefba, #ffffff);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 94, 98, 0.4);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-price {
+    font-size: 1.3em;
+    color: #ff5e62;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #180a03, #351101);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 1em;
+}

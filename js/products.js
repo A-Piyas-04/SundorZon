@@ -77,3 +77,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observeScrollAnimations();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const footer = document.querySelector(".footer");
+
+  const observer = new IntersectionObserver(
+      ([entry]) => {
+          if (entry.isIntersecting) {
+              footer.classList.add("fade-in");
+          }
+      },
+      { threshold: 0.1 }
+  );
+
+  observer.observe(footer);
+});
+
